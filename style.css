@@ -1,0 +1,371 @@
+body {
+font-family: 'Segoe UI', sans-serif;
+background-color: #ffffff;
+margin: 0;
+padding: 0;
+overflow: hidden;
+}
+
+.hidden {
+display: none;
+}
+
+.container {
+position: relative;
+width: 100%;
+max-width: 400px;
+margin: 0 auto;
+}
+
+/* POPUP STYLES */
+.pasangan {
+font-family: 'Dancing Script', cursive;
+font-size: 41px;
+text-align: center;
+line-height: 1.4;
+margin: 8px auto 5px auto;
+padding: 0;
+}
+
+.popup {
+position: relative;
+top: 0; left: 0;
+width: 100vw;
+height: 100vh;
+background: url('bgpembuka.jpg') no-repeat center center/cover;
+display: flex;
+justify-content: center;
+align-items: center;
+z-index: 999;
+overflow: hidden;
+}
+
+.popup-content h1 {
+font-family: 'Playfair Display', serif;
+font-size: 1.6em;
+color: #8b0000;
+margin-bottom: 0.3em;
+}
+
+.kepada-yth {
+font-size: 1.2em;
+font-weight: 600;
+margin: 0.4em;
+}
+
+.nama-tamu {
+font-size: 1.5em;
+font-weight: bold;
+margin: 0;
+color: #8b0000;
+}
+
+.popup-content {
+display: flex;
+flex-direction: column;
+align-items: center;
+justify-content: center;
+text-align: center;
+}
+
+.popup-content button {
+margin-top: 16px;
+padding: 10px 17px;
+font-size: 0.9rem;
+font-weight: bold;
+font-family: inherit;
+cursor: pointer;
+border: none;
+border-radius: 8px;
+background-color: #127adc;
+color: #ffffff;
+box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+transition: background-color 0.3s ease;
+}
+
+.popup-content button:hover {
+background-color: #0ea4c9;
+}
+
+.fade-in-up {
+opacity: 0;
+transform: translateY(20px);
+animation: fadeInUp 1.5s ease-out forwards;
+}
+
+@keyframes fadeInUp {
+to {
+opacity: 1;
+transform: translateY(0);
+}
+}
+
+@keyframes slideOutUp {
+from {
+transform: translateY(0);
+opacity: 1;
+}
+to {
+transform: translateY(-100%);
+opacity: 0;
+}
+}
+
+.slide-out-up {
+animation: slideOutUp 0.8s ease forwards;
+}
+
+/* Bunga */
+.bunga {
+position: absolute;
+width: 160px;
+opacity: 0;
+transform: scale(0.8) translateY(20px);
+animation: bunga-muncul 1.5s ease-out forwards, bunga-gerak 8s ease-in-out infinite;
+z-index: 1;
+}
+
+.kiri-atas {
+top: -4.6px;
+left: 0;
+animation-delay: 1s, 4s;
+}
+
+.kanan-bawah {
+bottom: -4.6px;
+right: 1.7px;
+animation-delay: 1s, 4s;
+}
+
+/* Animasi */
+@keyframes bunga-muncul {
+to {
+opacity: 1;
+transform: scale(1) translateY(0);
+}
+}
+
+@keyframes bunga-gerak {
+0%, 100% {
+transform: translateY(0) rotate(0deg);
+}
+25% {
+transform: translateY(-10px) rotate(2deg);
+}
+50% {
+transform: translateY(5px) rotate(-2deg);
+}
+75% {
+transform: translateY(-5px) rotate(1deg);
+}
+}
+
+/* Photo Pembuka*/
+.photo-wrapper {
+margin: 1em 0;
+margin-bottom: 20px;
+display: flex;
+justify-content: center;
+}
+
+.photo-wrapper img {
+width: 180px;
+height: 240px;
+object-fit: cover;
+border-radius: 50% / 40%;
+border: 5px solid white;
+box-shadow: 0 6px 16px rgba(0, 0, 0, 0.25);
+
+opacity: 0;
+transform: scale(0.9);
+animation: muncul-foto 1.5s ease-out forwards;
+}
+
+@keyframes muncul-foto {
+to {
+opacity: 1;
+transform: scale(1);
+}
+}
+
+/* main Content */
+#mainContent {
+scroll-snap-type: y mandatory;
+overflow-y: scroll;
+height: 100vh;
+}
+
+/* Slide 1 */
+.background {
+position: relative;
+background-position: center;
+top: 0; left: 0;
+width: 100vw;
+height: 100vh;
+background-image: url('bgisi.jpg');
+overflow: hidden;
+}
+
+.bingkai-kiri-atas {
+position: absolute;
+top: -30px;
+left: -10px;
+width: 50%;
+height: 50%;
+background: url('bingkaikiri.png') no-repeat center center;
+background-size: contain;
+z-index: 1;
+opacity: 0;
+animation: slideIn 1s ease-out forwards, swing 3s ease-in-out infinite;
+animation-delay: 0.5s, 1.5s;
+}
+
+@keyframes slideIn {
+0% {
+opacity: 0;
+transform: translateY(-50px);
+}
+100% {
+opacity: 1;
+transform: translateY(0);
+}
+}
+
+.bingkai-kanan-bawah {
+position: absolute;
+bottom: -35px;
+right: -10px;
+width: 40%;
+height: 45%;
+background: url('bingkaikanan.png') no-repeat center center;
+background-size: contain;
+z-index: 0;
+opacity: 0;
+animation: slideUp 1s ease-out forwards, swing 3s ease-in-out infinite;
+animation-delay: 1s, 2s;
+}
+
+@keyframes slideUp {
+0% {
+opacity: 0;
+transform: translateY(50px);
+}
+100% {
+opacity: 1;
+transform: translateY(0);
+}
+}
+
+@keyframes swing {
+0% { transform: rotate(0deg); }
+50% { transform: rotate(3deg); }
+100% { transform: rotate(0deg); }
+}
+
+.wedding-text {
+position: absolute;
+bottom: 8%;
+left: 2%;
+color: white;
+text-align: left;
+padding: 1em;
+max-width: 90%;
+}
+
+@keyframes fadeInText {
+0% { opacity: 0; }
+100% { opacity: 1; }
+}
+
+.wedding-text h2 {
+font-family: 'Playfair Display', serif;
+font-size: 1.8em;
+margin: 0;
+}
+
+.wedding-text h1 {
+font-family: 'Dancing Script', cursive;
+font-size: 2.5em;
+margin: 0.2em 0;
+}
+
+.wedding-text p {
+font-size: 1.1em;
+font-family: 'Segoe UI', sans-serif;
+margin: 0.3em 0;
+}
+
+.wedding-text .date {
+font-weight: bold;
+margin-top: 0.5em;
+}
+
+/* Slide 2*/
+.profil-mempelai {
+width: 100vw;
+height: 90vh;
+position: relative;
+overflow: hidden;
+text-align: center;
+background: linear-gradient(to bottom, #f0fdfa, #5ec0d8, #f0fdfa);
+color: #333;
+animation: fadeInText 1s ease-out forwards;
+}
+
+.judul {
+font-family: 'Playfair Display', serif;
+font-size: 2em;
+margin-bottom: 1.5em;
+}
+
+.profil-wrapper {
+display: flex;
+justify-content: center;
+align-items: center;
+gap: 2em;
+flex-wrap: wrap;
+}
+
+.mempelai {
+position: relative;
+flex: 1 1 200px;
+max-width: 250px;
+animation: float 4s ease-in-out infinite;
+}
+
+.foto {
+width: 100%;
+max-width: 200px;
+max-height: 200px;
+border-radius: 50%;
+box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+margin-bottom: 1em;
+object-fit: cover;
+}
+
+.mempelai h3, .mempelai p {
+position: absolute;
+bottom: 10px;
+left: 50%;
+transform: translateX(-50%);
+color: white;
+text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
+font-size: 1em;
+margin: 0;
+}
+
+.mempelai h3 {
+font-size: 1.2em;
+font-weight: bold;
+}
+
+.mempelai p {
+font-size: 0.9em;
+font-style: italic;
+}
+
+@keyframes float {
+0% { transform: translateY(0); }
+50% { transform: translateY(-8px); }
+100% { transform: translateY(0); }
+}
