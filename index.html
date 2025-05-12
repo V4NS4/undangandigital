@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Undangan Digital</title>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+    <!-- POPUP PEMBUKA -->
+    <div id="popup">
+        <div class="container popup">
+            <img src="assets/bungaatas.png" class="bunga kiri-atas" />
+            <img src="assets/bungabawah.png" class="bunga kanan-bawah" />
+            <div class="popup-content">
+                <h1 class="fade-in-up">The Wedding Of</h1>
+                <h2 class="pasangan fade-in-up">Siti S & Yogi N</h2>
+                <div class="photo-wrapper">
+                    <img src="assets/photodepan.jpg" alt="Foto Mempelai" />
+                </div>
+                <p class="kepada-yth fade-in-up">Kepada Yth:</p>
+                <p class="nama-tamu fade-in-up" id="guest-name">Nama Tamu</p>
+                <button onclick="openInvitation()">Buka Undangan</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- ISI UNDANGAN -->
+    <div id="mainContent" class="hidden">
+        <button id="toggleMusic" class="btn-music-floating">
+            <i class="bi bi-pause-circle-fill"></i>
+        </button>
+        <!-- Slide1 -->
+        <div class="container background">
+            <div class="wedding-section">
+                <div class="clouds">
+                    <img src="assets/awankiri.webp" class="cloud cloud-left" alt="Awan Kiri">
+                    <h2 class="wedding-title">The Wedding Of</h2>
+                    <img src="assets/awankanan.webp" class="cloud cloud-right" alt="Awan Kanan">
+                </div>
+                <img src="assets/kipaswayang.png" class="kipas-wayang" alt="Kipas Wayang">
+
+                <div class="bride-groom">
+                    <h1>Siti Suryani <span>&</span> Yogi Nurjaman</h1>
+                    <p class="date">Senin, 9 Juni 2025</p>
+                </div>
+                <div class="countdown">
+                    <div><span id="days">0</span>
+                        <p>Hari</p>
+                    </div>
+                    <div><span id="hours">0</span>
+                        <p>Jam</p>
+                    </div>
+                    <div><span id="minutes">0</span>
+                        <p>Menit</p>
+                    </div>
+                    <div><span id="seconds">0</span>
+                        <p>Detik</p>
+                    </div>
+                </div>
+                <div class="decoration-section">
+                    <img src="assets/gunungblkng.png" alt="Gunung Belakang" class="gunung-belakang">
+                    <img src="assets/wayangkiri.png" alt="Wayang Kiri" class="wayang wayang-kiri">
+                    <img src="assets/wayangkanan.png" alt="Wayang Kanan" class="wayang wayang-kanan">
+                    <img src="assets/gunungdpn.png" alt="Gunung depan" class="gunung-depan gunung-depan">
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide2 -->
+        <div class="container profil-mempelai">
+            <div class="kutipan-ayat">
+                <p>Assalamualaikum</p>
+                <p>"Dengan memohon Rahmat & Ridho Allah SWT, Kami bermaksud mengundang Bapak/Ibu/Saudara/i untuk
+                    menghadiri pernikahan kami"</p>
+            </div>
+            <div class="profil-wrapper">
+                <div class="mempelai">
+                    <img src="assets/cloud.png" alt="Kipas kiri" class="kipas kipas-kiri">
+                    <img src="assets/siti1.jpg" alt="Siti" class="foto">
+                    <div class="label-foto">
+                        <h3>Siti Suryani</h3>
+                        <p>Putri dari Bpk. Somadin & Ibu. Omoy</p>
+                    </div>
+                </div>
+                <div class="mempelai">
+                    <img src="assets/cloud.png" alt="Kipas kanan" class="kipas kipas-kanan">
+                    <img src="assets/yogi1.jpg" alt="Yogi" class="foto">
+                    <div class="label-foto">
+                        <h3>Yogi Nurjaman</h3>
+                        <p>Putra dari Bpk. Suryaman & Ibu. Nurliayah</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide3 -->
+        <div class="container slide-akad-resepsi">
+            <div class="section-akad animate-up" data-aos="fade-up" data-aos-duration="1000">
+                <h2>Akad Nikah</h2>
+                <ul>
+                    <li><strong>Hari, Tanggal :</strong> Senin, 9 Juni 2025</li>
+                    <li><strong>Jam :</strong> 10.00 WIB sampai selesai</li>
+                    <li><strong>Tempat :</strong> Dsn. Nusa Indah RT 01/08, Ds. Girimukti, <br> Kec. Sumedang Utara, Kab.
+                        Sumedang</li>
+                </ul>
+            </div>
+
+            <div class="section-resepsi animate-up" data-aos="fade-up" data-aos-duration="1000">
+                <h2>Resepsi</h2>
+                <ul>
+                    <li><strong>Hari, Tanggal :</strong> Senin, 9 Juni 2025</li>
+                    <li><strong>Jam :</strong> 10.00 WIB sampai selesai</li>
+                    <li><strong>Tempat :</strong> Dsn. Nusa Indah RT 01/08, Ds. Girimukti, <br> Kec. Sumedang Utara, Kab.
+                        Sumedang</li>
+                </ul>
+            </div>
+            <div class="lihat-lokasi">
+                <a href="https://www.google.com/maps/dir//dsn.nusa+indah+tr+01%2F08+ds.girimukti+kec.sumedang+utara+kab.sumedang/@-6.8527036,107.8794232,15z?entry=ttu&g_ep=EgoyMDI1MDUwNy4wIKXMDSoASAFQAw%3D%3D"
+                    target="_blank" class="btn-lokasi">
+                    <i class="bi bi-geo-alt-fill"></i> Lihat Lokasi
+                </a>
+            </div>
+        </div>
+
+        <!-- Slide4 -->
+        <div class="container perjalanan-cerita">
+            <h2 class="judul-cerita">Perjalanan Cerita Kami</h2>
+            <img src="assets/photo.jpg" alt="Foto Utama Perjalanan" class="foto-utama-cerita">
+            <div class="timeline">
+                <div class="story-item">
+                    <h3>Awal Cerita</h3>
+                    <p>Kami pertama kali bertemu di kampus tahun 2019, saat sama-sama mengikuti kegiatan organisasi
+                        mahasiswa...</p>
+                </div>
+                <div class="story-item">
+                    <h3>Lamaran</h3>
+                    <p>Pada 15 Januari 2025, kami melangsungkan prosesi lamaran sederhana yang penuh kehangatan di rumah
+                        keluarga...</p>
+                </div>
+                <div class="story-item">
+                    <h3>Pernikahan</h3>
+                    <p>Akhirnya, hari yang dinanti datang juga. Dengan izin Allah SWT, kami akan melangsungkan
+                        pernikahan pada 9 Juni 2025...</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide5 -->
+        <div class="container galeri-foto">
+            <h2 class="judul-galeri">Galeri Foto</h2>
+            <div class="grid-galeri">
+                <img src="assets/yogi1.jpg" alt="Galeri 1">
+                <img src="assets/yogi1.jpg" alt="Galeri 2">
+                <img src="assets/yogi1.jpg" alt="Galeri 3">
+                <img src="assets/yogi1.jpg" alt="Galeri 4">
+                <img src="assets/yogi1.jpg" alt="Galeri 5">
+                <img src="assets/yogi1.jpg" alt="Galeri 6">
+                <img src="assets/yogi1.jpg" alt="Galeri 7">
+                <img src="assets/yogi1.jpg" alt="Galeri 8">
+            </div>
+        </div>
+
+        <!-- Slide6 -->
+        <div class="container amplop-digital">
+            <h2 class="judul-amplop">Amplop Digital</h2>
+            <p class="deskripsi-amplop">
+                Doa restu Anda merupakan hadiah terindah bagi kami. Namun, jika ingin memberikan tanda kasih secara
+                digital, berikut informasi rekening kami:
+            </p>
+            <div class="data-rekening">
+                <div class="rekening-item">
+                    <img src="bca.png" alt="Logo BCA">
+                    <p class="nama-bank">BCA - 1234567890</p>
+                    <p class="atas-nama">a.n. Nama Pengantin</p>
+                </div>
+                <div class="rekening-item">
+                    <img src="bri.png" alt="Logo BRI">
+                    <p class="nama-bank">BRI - 0987654321</p>
+                    <p class="atas-nama">a.n. Nama Pengantin</p>
+                </div>
+            </div>
+        </div>
+
+        <footer class="container section-footer">
+            <p>&copy; 2025 Nama Anda. Semua Hak Cipta Dilindungi.</p>
+            <div class="footer-links">
+              <a href="#"><i class="bi bi-instagram"></i> Tentang Kami</a>
+              <a href="#"><i class="bi bi-envelope"></i> Kontak</a>
+            </div>
+          </footer>
+        
+        <audio id="bg-music" src="music.mp3" loop></audio>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
